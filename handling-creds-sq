@@ -1,0 +1,17 @@
+#!/usr/bin/env groovy
+pipeline {
+  agent any
+  environment {
+    EXAMPLE_CREDS = credentials('example-creds-id')
+  }
+  stages{
+    stage('Build'){
+      steps{
+        /* WRONG! */
+        sh('curl -u ${EXAMPLE_CREDS}:${EXAMPLE_CREDS_PSW} https://example.com/')
+      }
+    }
+  }
+}
+
+        
