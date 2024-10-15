@@ -1,0 +1,19 @@
+#!/usr/bin/env groovy
+pipeline {
+   agent { label 'devopstest' }
+   stages{
+    stage('Build'){
+      steps {
+        sh 'echo Building...'
+      }
+    }
+    stage('Test'){
+      steps{
+        sh 'echo Testing...'
+      }
+    }
+    stage('Deploy'){
+      sh 'echo Deploying...'
+    }
+  }
+}
