@@ -5,4 +5,26 @@ pipeline {
   stages {
     stage('First'){
       steps {
+        sh 'echo First Build'
+      }
+    }
+    stage('Second'){
+      steps {
+        sh 'echo Second Build'
+      }
+    }
+    stage('Third'){
+      steps {
+        sh 'echo Third Build'
+      }
+    }
+  }
+  post {
+    success {
+      sh 'echo the buid competed successfully'
+    }
+  }
+}
+
+    
         
