@@ -1,0 +1,16 @@
+@Library('') _
+
+pipeline {
+    agent any
+    stages {
+        stage('Example') {
+            steps {
+                script {
+                    echo myVar()  // Call the global variable
+                    def myObj = new my.package.MyClass()  // Use a class
+                    echo myObj.sayHello()
+                }
+            }
+        }
+    }
+}
